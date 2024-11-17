@@ -1,0 +1,64 @@
+.card {
+    background: #fff;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 5px 5px 17px -12px rgba(0,0,0,0.75);
+    text-align: start;
+  
+    h4 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    i{
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .fa-trash{
+      color: rgb(80, 80, 88);
+    }
+
+    .fa-pen-to-square{
+      color: rgb(180, 190, 34);
+    }
+
+    p {
+      margin: 0;
+      font-size: 12px;
+    }
+  
+    span {
+      font-weight: bold;
+      color: #333;
+      font-size: 12px;
+    }
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  

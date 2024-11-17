@@ -1,0 +1,11 @@
+<div class="dashboard w-100">
+    <div *ngFor="let status of todosStatus" class="task-col">
+      <h2>{{ status }}</h2>
+
+      <div class="tasks">
+        <div class="d-flex flex-column gap-2">
+          <app-card *ngFor="let task of getTasksByStatus(status)" [task]="task"></app-card>
+        </div>  
+      </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="card gap-1">
+
+  <h4>{{ task.name }}</h4>
+  <p>{{ task.description }}</p>      
+
+  <div class="row d-flex">
+    <div class="col-6 d-flex gap-3 align-items-center">
+      <i class="fa-solid fa-pen-to-square" (click)="onEdit()"></i>
+      <i class="fa-solid fa-trash" (click)="onDelete()"></i>
+      <!--
+      <label>
+        <input type="checkbox" [(ngModel)]="task.active" (change)="onEdit()" />
+        <span>{{ task.active ? 'Ativo' : 'Inativo' }}</span>
+      </label>
+      -->
+    </div>
+    <div class="col-6 text-end d-flex flex-column">
+      <p class="fs-6">{{ task.points }}</p>
+      <span>Pontos</span>
+    </div>
+  </div>
+
+  <!-- Modal de confirmação de exclusão -->
+  <div *ngIf="showDeleteModal" class="modal">
+    <div class="modal-content">
+      <h2>Confirmar Exclusão</h2>
+      <p>Tem certeza que deseja excluir esta tarefa?</p>
+      <button (click)="confirmDelete()">Sim</button>
+      <button (click)="cancelDelete()">Cancelar</button>
+    </div>
+  </div>
+
+  <!-- Modal de edição -->
+  <div *ngIf="showEditModal" class="modal">
+    <div class="modal-content">
+      <h2>Editar Tarefa</h2>
+      <label>
+        Nome:
+        <input [(ngModel)]="editedTask.name" name="nome-task" required />
+      </label>
+      <label>
+        Descrição:
+        <textarea [(ngModel)]="editedTask.description" name="descricao-task" required></textarea>
+      </label>
+      <label>
+        Pontos:
+        <input type="number" [(ngModel)]="editedTask.points" name="pontos-task"required />
+      </label>
+      <div>
+        <button (click)="confirmEdit()">Salvar</button>
+        <button (click)="cancelEdit()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
